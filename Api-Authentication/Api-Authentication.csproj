@@ -11,4 +11,14 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Adapters\Sql\" />
+    <Folder Include="Application\UseCase\" />
+    <Folder Include="Domain\Entities\" />
+    <Folder Include="Domain\ValuesObject\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Port\InputboundPort\" />
+    <Folder Include="Port\OutboundPort\" />
+  </ItemGroup>
+
 </Project>
