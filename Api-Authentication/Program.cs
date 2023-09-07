@@ -18,6 +18,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 
-app.AddEndpointCadastro();
+app.AddEndpointRegister();
 
 app.Run();
