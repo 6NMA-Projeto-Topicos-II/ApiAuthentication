@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Adapters\Sql\" />
-    <Folder Include="Application\UseCase\" />
     <Folder Include="Domain\Entities\" />
     <Folder Include="Domain\ValuesObject\" />
     <Folder Include="Infrastructure\" />
