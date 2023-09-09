@@ -11,13 +11,14 @@ namespace Api_Authentication.Application.UseCase
         {
             _repository = repository;
         }
-        public Task<string> Execute(InputRegisterUser request)
+        public async Task<string> Execute(InputRegisterUser request)
         {
             var retRepository = await _repository.QueryUsers(request);
-            if (retRepository. == null)
-            {
+            //if (retRepository.Contains() == null)
+            //{
 
-            }
+            //}
+            return "";
         }
     }
 }
