@@ -19,7 +19,7 @@
 
         public string GetConnectString(string dataBase)
         {
-            return $"Server={Server};Database={dataBase};User Id={user};Password={Password};";
+            return $"Server={Server};Database={dataBase};User Id={user};Password={Password};TrustServerCertificate=True;";
         }
 
     }

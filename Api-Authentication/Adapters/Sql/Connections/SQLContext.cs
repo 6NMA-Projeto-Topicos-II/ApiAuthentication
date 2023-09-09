@@ -1,8 +1,7 @@
-﻿using Api_Authentication.Adapters.Sql.Connections;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace Api_Authentication.Adapters.Sql
+namespace Api_Authentication.Adapters.Sql.Connections
 {
     public class SQLContext
     {

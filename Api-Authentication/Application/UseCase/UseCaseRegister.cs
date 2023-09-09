@@ -14,10 +14,10 @@ namespace Api_Authentication.Application.UseCase
         public async Task<string> Execute(InputRegisterUser request)
         {
             var retRepository = await _repository.QueryUsers(request);
-            //if (retRepository.Contains() == null)
-            //{
-
-            //}
+            if (retRepository.Select(x => x.Matricula).First() == request.Registration)
+            {
+                return "Matricula Já cadastrada";
+            }
             return "";
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Api_Authentication.Domain.DTO;
+using Api_Authentication.Port.InputboundPort;
 
 namespace Api_Authentication.Adapters.Http
 {
@@ -6,9 +7,10 @@ namespace Api_Authentication.Adapters.Http
     {
         public static void AddEndpointRegister(this WebApplication app)
         {
-            app.MapPost("/v1/Register", async Task<IResult> (InputRegisterUser request) =>
+            app.MapPost("/v1/Register", async Task<IResult> (InputRegisterUser request, IUseCaseRegister useCase) =>
             {
-                return Results.Ok(request);
+                var ret= await useCase.Execute(request);
+                return Results.Ok(ret);
             });
         }
     }
