@@ -1,4 +1,5 @@
 ﻿using Api_Authentication.Domain.DTO;
+using Api_Authentication.Domain.Exceptions;
 using Api_Authentication.Port.InputboundPort;
 using Api_Authentication.Port.OutboundPort;
 
@@ -14,11 +15,21 @@ namespace Api_Authentication.Application.UseCase
         public async Task<string> Execute(InputRegisterUser request)
         {
             var retRepository = await _repository.QueryUsers(request);
-            if (retRepository.Select(x => x.Matricula).First() == request.Registration)
+            if(retRepository.Count() != 0)
             {
-                return "Matricula Já cadastrada";
+                if (retRepository.Select(x => x.Matricula).First() == request.Registration)
+                {
+                    throw new BusinessException( "Matricula Já cadastrada");
+                }
+                if (retRepository.Select(x => x.Email).First() == request.Email)
+                {
+                    throw new BusinessException("Email já cadastrado");
+                }
             }
-            return "";
+
+            var ret = await _repository.InsertUsers(request);
+
+            return ret;
         }
     }
 }

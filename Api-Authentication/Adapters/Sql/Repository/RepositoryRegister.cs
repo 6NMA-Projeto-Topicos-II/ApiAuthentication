@@ -12,16 +12,23 @@ namespace Api_Authentication.Adapters.Sql.Repository
         {
             _context = context;
         }
-        public Task<string> InsertUsers(InputRegisterUser request)
+        public async Task<string> InsertUsers(InputRegisterUser request)
         {
-            throw new NotImplementedException();
+            using (var connect = _context.ConnectLocal())
+            {
+                var call = $"INSERT INTO tbl_Usuarios VALUES ('{request.Registration}','{request.Name}','{request.LastName}','{request.Email}','{request.Password}','{DateTime.Now.ToString()}')";
+
+                await connect.QueryAsync(call);
+
+                return "Cadastro realizado com sucesso";
+            }
         }
 
         public async Task<IEnumerable<dynamic>> QueryUsers(InputRegisterUser request)
         {
             using (var connect = _context.ConnectLocal())
             {
-                var call = $"SELECT * FROM tbl_Usuarios where Matricula = '{request.Registration}'";
+                var call = $"SELECT * FROM tbl_Usuarios where Matricula = '{request.Registration}' OR Email = '{request.Email}'";
 
                 var ret = await connect.QueryAsync(call);
 
