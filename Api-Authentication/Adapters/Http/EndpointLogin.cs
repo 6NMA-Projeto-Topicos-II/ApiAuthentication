@@ -22,7 +22,6 @@ namespace Api_Authentication.Adapters.Http
                 }
                 catch (Exception ex)
                 {
-
                     return Results.Json(ex.Message, statusCode: 500);
                 }
             });

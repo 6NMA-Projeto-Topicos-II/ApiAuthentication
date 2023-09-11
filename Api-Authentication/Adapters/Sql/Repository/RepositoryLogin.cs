@@ -14,11 +14,6 @@ namespace Api_Authentication.Adapters.Sql.Repository
             _context = context;
         }
 
-     
-     
-
-        // public async Task <string> TokenGeneration{ }
-
         public async Task<IEnumerable<dynamic>> QueryUsersLogin(InputLoginUser request)
         {
             using (var connect = _context.ConnectLocal())
@@ -30,5 +25,7 @@ namespace Api_Authentication.Adapters.Sql.Repository
                 return ret;
             }
         }
+
+  
     }
 }

@@ -13,6 +13,8 @@ namespace Api_Authentication.Infrastructure.Extensions
             service.AddSingleton<SQLContext>();
 
             service.AddScoped<IRepositoryRegister, RepositoryRegister>();
+
+            service.AddScoped<IRepositoryLogin, RepositoryLogin>();
          }
     }
 }

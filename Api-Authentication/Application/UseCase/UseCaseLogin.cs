@@ -14,22 +14,33 @@ namespace Api_Authentication.Application.UseCase
                 _repository = repository;
             }
 
+            
+            
+
             public async Task<string> ExecuteLogin(InputLoginUser request)
             {
                 var retRepository = await _repository.QueryUsersLogin(request);
 
-                if (retRepository.Count() == 0 || request.Registration == null || request.Password == null)
+
+                if (retRepository.Count() != 0 && request.Registration != null && request.Password != null)
                 {
-                    if (retRepository.Select(x => x.Matricula).First() != request.Registration && retRepository.Select(y => y.Senha).First() != request.Password)
+                    if (retRepository.Select(x => x.Matricula).First() != request.Registration)
                     {
-                        throw new BusinessException("Matricula ou senha inválidos");
+                        throw new BusinessException("Matricula inválida");
                     }
+                    if (retRepository.Select(y => y.Senha).First() != request.Password)
+                    {
+                        throw new BusinessException("Senha inválida");
+                    }
+                } else
+                {
+                    throw new BusinessException("Erro de login!!!");
                 }
 
-                //var ret = await _repository.InsertUsers(request);
-                //var ret = await _repository.
 
-                return "Autorização realizada com sucesso!!!";
+                var ret = "Autorização realizada com sucesso!!!";
+
+                return ret;
             }
         }
 
