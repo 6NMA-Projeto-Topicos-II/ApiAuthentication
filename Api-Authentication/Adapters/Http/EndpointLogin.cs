@@ -8,6 +8,7 @@ namespace Api_Authentication.Adapters.Http
     {
         public static void AddEndpointLogin(this WebApplication app)
         {
+            
             app.MapPost("/v1/Login", async Task<IResult> (InputLoginUser request, IUseCaseLogin useCase) =>
             {
                 try
