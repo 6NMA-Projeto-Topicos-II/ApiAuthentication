@@ -13,7 +13,7 @@ namespace Api_Authentication.Adapters.Http
             {
                 try
                 {
-                    var ret = await useCase.Execute(request);
+                    var ret = await useCase.ExecuteLogin(request);
                     return Results.Ok(ret);
                 }
                 catch (BusinessException ex)

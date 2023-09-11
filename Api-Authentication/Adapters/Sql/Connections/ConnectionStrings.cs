@@ -2,7 +2,7 @@
 {
     public class ConnectionStrings
     {
-        public Dictionary<string, ConnectString> Connect { get; set; }
+        public Dictionary<string, ConnectString>? Connect { get; set; }
 
         public string GetConnectString(string name, string dataBase)
         {
