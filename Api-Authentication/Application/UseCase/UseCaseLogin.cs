@@ -2,6 +2,7 @@
 using Api_Authentication.Domain.Exceptions;
 using Api_Authentication.Port.InputboundPort;
 using Api_Authentication.Port.OutboundPort;
+using Api_Authentication.Validation;
 
 namespace Api_Authentication.Application.UseCase
 {
@@ -21,8 +22,9 @@ namespace Api_Authentication.Application.UseCase
             {
                 var retRepository = await _repository.QueryUsersLogin(request);
 
+            Validate.ValidaRequest(request);
 
-                if (retRepository.Count() != 0)
+            if (retRepository.Count() != 0)
                 {
                     if (retRepository.Select(x => x.Matricula).First() != request.Registration)
                     {
@@ -32,6 +34,8 @@ namespace Api_Authentication.Application.UseCase
                     {
                         throw new BusinessException("Senha Inválida");
                     }
+
+                Validate.ValidaRequest(request);
                 } else
                 {
                     throw new BusinessException("Matrícula Inválida");

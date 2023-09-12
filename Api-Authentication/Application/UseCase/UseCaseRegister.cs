@@ -17,11 +17,11 @@ namespace Api_Authentication.Application.UseCase
             {
                 if (retRepository.Select(x => x.Matricula).First() == request.Registration)
                 {
-                    throw new BusinessException( "Matricula Já cadastrada");
+                    throw new BusinessException("Registration already registered");
                 }
                 if (retRepository.Select(x => x.Email).First() == request.Email)
                 {
-                    throw new BusinessException("Email já cadastrado");
+                    throw new BusinessException("Email already registered");
                 }
             }
 

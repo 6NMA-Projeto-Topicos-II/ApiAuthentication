@@ -6,7 +6,7 @@
 
         public string GetConnectString(string name, string dataBase)
         {
-            return Connect.First(x => x.Key == name ).Value.GetConnectString(dataBase);
+            return Connect.First(x => x.Key == name).Value.GetConnectString(dataBase);
         }
 
 
