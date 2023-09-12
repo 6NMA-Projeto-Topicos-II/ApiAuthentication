@@ -1,6 +1,7 @@
 ﻿using Api_Authentication.Domain.DTO;
 using Api_Authentication.Domain.Exceptions;
 using Api_Authentication.Port.InputboundPort;
+using Api_Authentication.Validation;
 
 namespace Api_Authentication.Adapters.Http
 {
@@ -13,6 +14,7 @@ namespace Api_Authentication.Adapters.Http
             {
                 try
                 {
+                    Validate.ValidaRequest(request);
                     var ret = await useCase.ExecuteLogin(request);
                     return Results.Ok(ret);
                 }

@@ -8,12 +8,9 @@ namespace Api_Authentication.Infrastructure.Extensions
         public static void AddDomainExtensions(this IServiceCollection services)
         {
             services.AddScoped<IUseCaseRegister, UseCaseRegister>();
-
-        }
-
-        public static void AddDomainExtensionsLogin(this IServiceCollection services)
-        {
             services.AddScoped<IUseCaseLogin, UseCaseLogin>();
+
         }
+
     }
 }

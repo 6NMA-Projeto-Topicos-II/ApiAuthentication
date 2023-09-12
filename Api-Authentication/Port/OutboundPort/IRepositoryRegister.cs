@@ -6,5 +6,7 @@ namespace Api_Authentication.Port.OutboundPort
     {
         public Task<string> InsertUsers(InputRegisterUser request);
         public Task<IEnumerable<dynamic>> QueryUsers(InputRegisterUser request);
+
+  
     }
 }

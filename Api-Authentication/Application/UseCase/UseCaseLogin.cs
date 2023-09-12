@@ -22,19 +22,19 @@ namespace Api_Authentication.Application.UseCase
                 var retRepository = await _repository.QueryUsersLogin(request);
 
 
-                if (retRepository.Count() != 0 && request.Registration != null && request.Password != null)
+                if (retRepository.Count() != 0)
                 {
                     if (retRepository.Select(x => x.Matricula).First() != request.Registration)
                     {
-                        throw new BusinessException("Matricula inválida");
+                        throw new BusinessException("Matrícula Inválida");
                     }
                     if (retRepository.Select(y => y.Senha).First() != request.Password)
                     {
-                        throw new BusinessException("Senha inválida");
+                        throw new BusinessException("Senha Inválida");
                     }
                 } else
                 {
-                    throw new BusinessException("Erro de login!!!");
+                    throw new BusinessException("Matrícula Inválida");
                 }
 
 

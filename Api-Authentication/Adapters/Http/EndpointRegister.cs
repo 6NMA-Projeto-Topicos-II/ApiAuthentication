@@ -1,6 +1,7 @@
 ﻿using Api_Authentication.Domain.DTO;
 using Api_Authentication.Domain.Exceptions;
 using Api_Authentication.Port.InputboundPort;
+using Api_Authentication.Validation;
 
 namespace Api_Authentication.Adapters.Http
 {

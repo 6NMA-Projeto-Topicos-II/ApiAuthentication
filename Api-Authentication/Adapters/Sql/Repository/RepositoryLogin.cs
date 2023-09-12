@@ -18,7 +18,7 @@ namespace Api_Authentication.Adapters.Sql.Repository
         {
             using (var connect = _context.ConnectLocal())
             {
-                var call = $"SELECT * FROM tbl_Usuarios where Matricula = '{request.Registration}";
+                var call = $"SELECT * FROM tbl_Usuarios where Matricula = '{request.Registration}'";
 
                 var ret = await connect.QueryAsync(call);
 
@@ -26,6 +26,6 @@ namespace Api_Authentication.Adapters.Sql.Repository
             }
         }
 
-  
+
     }
 }
