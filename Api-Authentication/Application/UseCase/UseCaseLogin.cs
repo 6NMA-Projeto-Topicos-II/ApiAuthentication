@@ -9,18 +9,17 @@ namespace Api_Authentication.Application.UseCase
 
         public class UseCaseLogin : IUseCaseLogin
         {
-            private readonly IRepositoryLogin _repository;
-            public UseCaseLogin(IRepositoryLogin repository)
+            private readonly IRepository _repository;
+            public UseCaseLogin(IRepository repository)
             {
                 _repository = repository;
             }
 
             
             
-
-            public async Task<string> ExecuteLogin(InputLoginUser request)
+            public async Task<string> Execute(InputLoginUser request)
             {
-                var retRepository = await _repository.QueryUsersLogin(request);
+                var retRepository = await _repository.QueryUsers(request);
 
             Validate.ValidaRequest(request);
 
@@ -34,8 +33,6 @@ namespace Api_Authentication.Application.UseCase
                     {
                         throw new BusinessException("Senha Inválida");
                     }
-
-                Validate.ValidaRequest(request);
                 } else
                 {
                     throw new BusinessException("Matrícula Inválida");

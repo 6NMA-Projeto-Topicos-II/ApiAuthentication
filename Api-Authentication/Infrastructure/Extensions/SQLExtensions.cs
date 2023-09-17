@@ -12,9 +12,8 @@ namespace Api_Authentication.Infrastructure.Extensions
             service.AddSingleton(configuration.GetSection("SqlConnect").Get<ConnectionStrings>());
             service.AddSingleton<SQLContext>();
 
-            service.AddScoped<IRepositoryRegister, RepositoryRegister>();
+            service.AddScoped<IRepository, Repository>();
 
-            service.AddScoped<IRepositoryLogin, RepositoryLogin>();
          }
     }
 }

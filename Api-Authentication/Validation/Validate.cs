@@ -1,11 +1,12 @@
 ﻿using Api_Authentication.Domain.DTO;
 using Api_Authentication.Domain.Exceptions;
+using Azure.Core;
 
 namespace Api_Authentication.Validation
 {
     public static class Validate
     {
-        
+
         public static void ValidaRequest(InputLoginUser request)
         {
             if (string.IsNullOrEmpty(request.Registration) || string.IsNullOrWhiteSpace(request.Registration))
@@ -17,6 +18,7 @@ namespace Api_Authentication.Validation
                 throw new BusinessException("Senha Inválida!");
             }
         }
-    
+
+
     }
 }

@@ -2,18 +2,20 @@
 using Api_Authentication.Domain.Exceptions;
 using Api_Authentication.Port.InputboundPort;
 using Api_Authentication.Port.OutboundPort;
+using Api_Authentication.Validation;
 
 namespace Api_Authentication.Application.UseCase
 {
     public class UseCaseRegister : IUseCaseRegister
     {
-        private readonly IRepositoryRegister _repository;
-        public UseCaseRegister(IRepositoryRegister repository) => _repository = repository;
+        private readonly IRepository _repository;
+        public UseCaseRegister(IRepository repository) => _repository = repository;
 
         public async Task<string> Execute(InputRegisterUser request)
         {
             var retRepository = await _repository.QueryUsers(request);
-            if(retRepository.Count() != 0)
+
+            if (retRepository.Count() != 0)
             {
                 if (retRepository.Select(x => x.Matricula).First() == request.Registration)
                 {

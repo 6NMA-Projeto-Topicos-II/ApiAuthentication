@@ -15,7 +15,7 @@ namespace Api_Authentication.Adapters.Http
                 try
                 {
                     Validate.ValidaRequest(request);
-                    var ret = await useCase.ExecuteLogin(request);
+                    var ret = await useCase.Execute(request);
                     return Results.Ok(ret);
                 }
                 catch (BusinessException ex)
