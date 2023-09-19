@@ -9,6 +9,7 @@ namespace Api_Authentication.Application.UseCase
     public class UseCaseRegister : IUseCaseRegister
     {
         private readonly IRepository _repository;
+        
         public UseCaseRegister(IRepository repository) => _repository = repository;
 
         public async Task<string> Execute(InputRegisterUser request)
