@@ -1,4 +1,4 @@
-﻿using Api_Authentication.Application.UseCase;
+﻿using Api_Authentication.Domain.Application.UseCase;
 using Api_Authentication.Port.InputboundPort;
 
 namespace Api_Authentication.Infrastructure.Extensions

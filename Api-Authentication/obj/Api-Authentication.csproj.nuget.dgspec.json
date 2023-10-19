@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\Api-Authentication\\Api-Authentication\\Api-Authentication.csproj": {}
+    "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\ApiAuthentication\\Api-Authentication\\Api-Authentication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\Api-Authentication\\Api-Authentication\\Api-Authentication.csproj": {
+    "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\ApiAuthentication\\Api-Authentication\\Api-Authentication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\Api-Authentication\\Api-Authentication\\Api-Authentication.csproj",
+        "projectUniqueName": "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\ApiAuthentication\\Api-Authentication\\Api-Authentication.csproj",
         "projectName": "Api-Authentication",
-        "projectPath": "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\Api-Authentication\\Api-Authentication\\Api-Authentication.csproj",
+        "projectPath": "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\ApiAuthentication\\Api-Authentication\\Api-Authentication.csproj",
         "packagesPath": "C:\\Users\\renzo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\Api-Authentication\\Api-Authentication\\obj\\",
+        "outputPath": "C:\\Users\\renzo\\Documents\\Projeto topicos Integradores\\ApiAuthentication\\Api-Authentication\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\renzo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,9 +44,17 @@
               "target": "Package",
               "version": "[2.0.78, )"
             },
-            "Microsoft.Data.SqlClient": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[5.1.1, )"
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.2, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.11, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

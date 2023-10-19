@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSqlExtensions(builder.Configuration);
+builder.Services.AddSqlPostgresExtensions(builder.Configuration);
 builder.Services.AddDomainExtensions();
 
 var app = builder.Build();
