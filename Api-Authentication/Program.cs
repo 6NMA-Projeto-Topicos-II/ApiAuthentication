@@ -9,6 +9,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSqlPostgresExtensions(builder.Configuration);
 builder.Services.AddDomainExtensions();
 
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 
@@ -23,5 +25,11 @@ app.UseHttpsRedirection();
 
 app.AddEndpointRegister();
 app.AddEndpointLogin();
+app.UseCors(builder =>
+{
+    builder.AllowAnyOrigin() 
+           .AllowAnyHeader()
+           .AllowAnyMethod();
+});
 
 app.Run();

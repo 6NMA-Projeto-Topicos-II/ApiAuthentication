@@ -33,6 +33,23 @@ namespace Api_Authentication.Adapters.Sql.Repository
             
         }
 
+        public async Task<Usuario> QueryUsersRegistrationOrEmail(InputRegisterUser request)
+        {
+
+            try
+            {
+                var ret = await _contextDB.Usuarios!.Where(User => User.email == request.Email || User.matricula == request.Registration)
+                 .FirstOrDefaultAsync();
+
+                return ret;
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+
+        }
 
         public async Task<List<Usuario>> QueryUsersRegistration(InputLoginUser request)
         {
